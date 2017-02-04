@@ -133,15 +133,14 @@ function yunsu(obj, target) {
             //说明目标我们的左侧，应该往左。
             step = -step;
         }
-        //距离要大于一步的时候，我们让宇哥跑
+        //距离要大于一步的时候
         var juli = Math.abs(target - leader);
         //step有可能是负的
         if (juli > Math.abs(step)) {
             leader = leader + step;
-            obj.style.left = leader + "px";//一定要记得家单位
+            obj.style.left = leader + "px";//一定要记得单位
         } else {
-            ////如果距离不够一步的话，我们就不让宇哥继续走下去了
-            //手动的吧宇哥移动到终点
+            ////如果距离不够一步的话，手动移动到终点
             clearInterval(obj.timer);
             obj.style.left = target + "px";
         }
